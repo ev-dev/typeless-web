@@ -1,4 +1,32 @@
 import axios from 'axios'
+import getGoogleSuggestions from 'google-suggestions'
+// import Suggestion from 'get-suggestions'
+
+// export const fetchSuggestions = query => {
+//   const crop = query.length
+//   let newQuery = new Suggestion(query)
+//   return newQuery.get()
+//     .then(suggestions => {
+//       console.log('suggestions', suggestions)
+//       return suggestions
+//     })
+//     .catch(err => console.error(err))
+// }
+
+export const fetchSuggestions = query => {
+  const crop = query.length
+  return getGoogleSuggestions(query)
+    .then(rawSuggestions => {
+      if (rawSuggestions.length) {
+        return rawSuggestions.map(suggestion =>
+          suggestion.slice(crop)).slice(0, 6)
+      } else {
+        console.log(`No suggestions found for ${query}...`)
+      }
+    })
+    .catch(console.error)
+}
+
 
 export const makeSuggestionRequest = query => {
   const crop = query.length // + 1

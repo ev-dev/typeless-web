@@ -2,7 +2,9 @@ const path = require('path')
 const { promisify } = require('util')
 const express = require('express')
 const bodyParser = require('body-parser')
-const suggest = promisify(require('suggestion'))
+// const suggest = promisify(require('suggestion'))
+// const suggest = promisify(require('node-google-suggest'))
+const suggest = require('google-suggestions')
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -24,6 +26,9 @@ app.get('/*', (req, res) => {
 
 app.post('/suggestions', (req, res, next) => {
   suggest(req.body.query)
+    .then(data => data.map(suggestion =>
+      suggestion.slice(0, -4)
+    ))
     .then(suggestions => {
       console.log('\nsuggestion results: ')
       console.log(suggestions)

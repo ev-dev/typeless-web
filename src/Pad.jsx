@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import googleSuggestions from 'google-suggestions'
 
-import { makeSuggestionRequest } from './helpers'
+import { makeSuggestionRequest, fetchSuggestions } from './helpers'
 import SuggestionBar from './SuggestionBar'
 import Timer from './Timer'
 
@@ -22,6 +22,11 @@ export default class Pad extends Component {
   componentWillUnmount() {
     document.removeEventListener('keydown', this.handleTabAndArrowKeys, false)
     clearInterval(this.interval)
+  }
+
+  componentDidCatch(err, info) {
+    console.log(err)
+    console.log(info)
   }
 
   handleInputChange = ({ target }) => {
@@ -93,17 +98,32 @@ export default class Pad extends Component {
         requestCount: requestCount + 1
       }))
 
-      makeSuggestionRequest(query)
+      // does requests from client
+      googleSuggestions(query)
         .then(suggestions => {
           console.log('request made')
           console.log(suggestions)
           
-          if (this.state.suggestions && this.state.suggestions[0] === suggestions[0]) {
-            console.log('same results already in state')
-          } else {
-            this.setState({ suggestions })
-          }
+          // if (this.state.suggestions && this.state.suggestions[0] === suggestions[0]) {
+          //   console.log('same results already in state')
+          // } else {
+          //   this.setState({ suggestions })
+          // }
         })
+        .catch(console.error)
+
+      // hits backend server
+      // makeSuggestionRequest(query)
+      //   .then(suggestions => {
+      //     console.log('request made')
+      //     console.log(suggestions)
+          
+      //     if (this.state.suggestions && this.state.suggestions[0] === suggestions[0]) {
+      //       console.log('same results already in state')
+      //     } else {
+      //       this.setState({ suggestions })
+      //     }
+      //   })
     }
 
     // if requestCount exceeds 5 pause requestCount for 10sec (start timer)
@@ -140,11 +160,12 @@ export default class Pad extends Component {
 
     return (
       <div className="app-body">
-        {/* <Timer secondsRemaining="10" /> */}
-        <h1>Request Count:  {requestCount && requestCount}</h1>
-        <h1>Access:  {requestBlocked ? 'Blocked' : 'Open'}</h1>
-        <h1>Seconds Until Unblock:  {secondsRemaining}</h1>
-        
+        <div className="center">
+          <h1>Request Count:  {requestCount && requestCount}</h1>
+          <h1>Access:  {requestBlocked ? 'Blocked' : 'Open'}</h1>
+          <h1>Seconds Until Unblock:  {secondsRemaining}</h1>
+        </div>
+
         <h3 className="center subtitle output-title">Output</h3>
         <div className="columns">
           <div className="column output-container">
@@ -161,6 +182,7 @@ export default class Pad extends Component {
               onChange={this.handleInputChange}
               value={input}
               onKeyPress={this.handleTabAndArrowKeys}
+              autoFocus
             >
             </textarea>
           </div>

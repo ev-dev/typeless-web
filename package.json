@@ -14,13 +14,15 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.16.2",
+    "bluebird": "^3.5.1",
     "bulma": "^0.5.3",
     "express": "^4.16.1",
+    "google-suggestions": "0.0.2",
+    "node-google-suggest": "^1.0.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-idle-timer": "^1.5.2",
-    "react-router-dom": "^4.2.2",
-    "suggestion": "^2.1.2"
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.5",

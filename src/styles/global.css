@@ -60,13 +60,14 @@ a:hover {
   font-size: 20px;
   padding: 10px !important;
   max-width: 65vw;
-  width: 30vw;
+  width: 40vw;
   min-width: 5vw;
   height: 50vh;
 }
 
 .main-pad-container {
   padding: 0px;
+  margin-left: 20%;
 }
 
 .suggestion-container {
