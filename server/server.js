@@ -16,14 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(require('volleyball'))
 
-app.get('/bundle.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', '..', 'public', 'bundle.js'))
-})
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'))
-})
-
 // Google suggestion API
 app.get('/api/suggest/:query', (req, res, next) => {
   googleSuggest(req.body.query)
@@ -73,10 +65,17 @@ app.get('/api/azure', (req, res, next) => {
   .catch(console.error)
 })
 
+app.get('/bundle.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'bundle.js'))
+})
 
 app.use((req, res, next) => {
   if (path.extname(req.path).length > 0) res.status(404).end()
   else next(null)
+})
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 })
 
 app.use((err, req, res, next) => {

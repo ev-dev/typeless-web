@@ -101,33 +101,6 @@ export default class Pad extends Component {
         requestCount: requestCount + 1
       }))
 
-      // does requests from client
-      // googleSuggestions(query)
-      //   .then(suggestions => {
-      //     console.log('request made')
-      //     console.log(suggestions)
-          
-          // if (this.state.suggestions && this.state.suggestions[0] === suggestions[0]) {
-          //   console.log('same results already in state')
-          // } else {
-          //   this.setState({ suggestions })
-          // }
-        // })
-        // .catch(console.error)
-
-      // hits backend server
-      // makeSuggestionRequest(query)
-      //   .then(suggestions => {
-      //     console.log('request made')
-      //     console.log(suggestions)
-          
-      //     if (this.state.suggestions && this.state.suggestions[0] === suggestions[0]) {
-      //       console.log('same results already in state')
-      //     } else {
-      //       this.setState({ suggestions })
-      //     }
-      //   })
-    
       fetchSuggestions(query)
         .then(suggestions => {
           if (suggestions.length !== 0) {
@@ -140,9 +113,7 @@ export default class Pad extends Component {
             throw new Error('Error in request')
           }
         })
-        .catch(console.error)
-    
-    
+        .catch(console.error)    
     }
 
     // if requestCount exceeds 5 pause requestCount for 10sec (start timer)

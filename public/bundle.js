@@ -28866,33 +28866,6 @@ var Pad = function (_Component) {
           });
         });
 
-        // does requests from client
-        // googleSuggestions(query)
-        //   .then(suggestions => {
-        //     console.log('request made')
-        //     console.log(suggestions)
-
-        // if (this.state.suggestions && this.state.suggestions[0] === suggestions[0]) {
-        //   console.log('same results already in state')
-        // } else {
-        //   this.setState({ suggestions })
-        // }
-        // })
-        // .catch(console.error)
-
-        // hits backend server
-        // makeSuggestionRequest(query)
-        //   .then(suggestions => {
-        //     console.log('request made')
-        //     console.log(suggestions)
-
-        //     if (this.state.suggestions && this.state.suggestions[0] === suggestions[0]) {
-        //       console.log('same results already in state')
-        //     } else {
-        //       this.setState({ suggestions })
-        //     }
-        //   })
-
         Object(__WEBPACK_IMPORTED_MODULE_2__helpers__["a" /* fetchSuggestions */])(query).then(function (suggestions) {
           if (suggestions.length !== 0) {
             console.log('azure response', suggestions);
@@ -28963,7 +28936,7 @@ var Pad = function (_Component) {
         'div',
         { className: 'app-body', __source: {
             fileName: _jsxFileName,
-            lineNumber: 181
+            lineNumber: 152
           },
           __self: this
         },
@@ -28971,7 +28944,7 @@ var Pad = function (_Component) {
           'div',
           { className: 'center', __source: {
               fileName: _jsxFileName,
-              lineNumber: 182
+              lineNumber: 153
             },
             __self: this
           },
@@ -28980,7 +28953,7 @@ var Pad = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 183
+                lineNumber: 154
               },
               __self: this
             },
@@ -28992,7 +28965,7 @@ var Pad = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 184
+                lineNumber: 155
               },
               __self: this
             },
@@ -29004,7 +28977,7 @@ var Pad = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 185
+                lineNumber: 156
               },
               __self: this
             },
@@ -29016,7 +28989,7 @@ var Pad = function (_Component) {
           'h3',
           { className: 'center subtitle output-title', __source: {
               fileName: _jsxFileName,
-              lineNumber: 188
+              lineNumber: 159
             },
             __self: this
           },
@@ -29026,7 +28999,7 @@ var Pad = function (_Component) {
           'div',
           { className: 'columns', __source: {
               fileName: _jsxFileName,
-              lineNumber: 189
+              lineNumber: 160
             },
             __self: this
           },
@@ -29034,7 +29007,7 @@ var Pad = function (_Component) {
             'div',
             { className: 'column output-container', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 190
+                lineNumber: 161
               },
               __self: this
             },
@@ -29042,7 +29015,7 @@ var Pad = function (_Component) {
               'h4',
               { className: 'center output-text', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 191
+                  lineNumber: 162
                 },
                 __self: this
               },
@@ -29054,7 +29027,7 @@ var Pad = function (_Component) {
           'div',
           { className: 'columns', __source: {
               fileName: _jsxFileName,
-              lineNumber: 195
+              lineNumber: 166
             },
             __self: this
           },
@@ -29062,7 +29035,7 @@ var Pad = function (_Component) {
             'div',
             { className: 'column main-pad-container', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 196
+                lineNumber: 167
               },
               __self: this
             },
@@ -29076,7 +29049,7 @@ var Pad = function (_Component) {
               autoFocus: true,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 197
+                lineNumber: 168
               },
               __self: this
             })
@@ -29085,13 +29058,13 @@ var Pad = function (_Component) {
             'div',
             { className: 'column suggestion-higher-container', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 208
+                lineNumber: 179
               },
               __self: this
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__SuggestionBar__["a" /* default */], { suggestions: suggestions, selected: selected, __source: {
                 fileName: _jsxFileName,
-                lineNumber: 209
+                lineNumber: 180
               },
               __self: this
             })
