@@ -1,11 +1,14 @@
+const { AZURE_KEY } = require('../api_keys')
 const path = require('path')
-const { promisify } = require('util')
+const chalk = require('chalk')
 const express = require('express')
 const bodyParser = require('body-parser')
-// const suggest = promisify(require('suggestion'))
-// const suggest = promisify(require('node-google-suggest'))
-const suggest = require('google-suggestions')
 const axios = require('axios')
+const googleSuggest = require('google-suggestions')
+
+// const { promisify } = require('util')
+// const suggestion = promisify(require('suggestion'))
+// const nodeGoogleSuggest = promisify(require('node-google-suggest'))
 
 
 const app = express()
@@ -17,14 +20,13 @@ app.get('/bundle.js', (req, res) => {
   res.sendFile(path.join(__dirname, '..', '..', 'public', 'bundle.js'))
 })
 
-app.use((req, res, next) => {
-  if (path.extname(req.path).length > 0) res.status(404).end()
-  else next(null)
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'))
 })
 
-
-app.post('/api/suggest', (req, res, next) => {
-  suggest(req.body.query)
+// Google suggestion API
+app.get('/api/suggest/:query', (req, res, next) => {
+  googleSuggest(req.body.query)
     .then(data => data.map(suggestion =>
       suggestion.replace(/<\/b>/, '')
     ))
@@ -36,18 +38,34 @@ app.post('/api/suggest', (req, res, next) => {
     .catch(next)
 })
 
-app.get('/api/azure/body/:query', (req, res, next) => {
+/* Azure Web Language API
+  Query Params:
+    ?type=[suggest, correct]
+    ?model=[body, anchor, query, title]
+    ?q=[custom query]     
+*/
+app.get('/api/azure', (req, res, next) => {
+  const { type, model, q } = req.query
+  
+  let azureUrl
+  if (type === 'suggest') azureUrl = 'generateNextWords'
+  else if (type === 'correct') azureUrl = 'breakIntoWords'
+  else next(null)
+
+  if (model !== 'body' || model !== 'anchor' || model !== 'title' || model !== 'query') next(null)
+
+  // @ts-ignore
   axios({
-    url: '/generateNextWords',
+    url: `/${azureUrl}`,
     method: 'post',
     baseURL: 'https://westus.api.cognitive.microsoft.com/text/weblm/v1.0/',
     headers: {
       'Host': 'westus.api.cognitive.microsoft.com',
-      'Ocp-Apim-Subscription-Key': 'e97abab4ef3f4998b293713e9a5287d6'
+      'Ocp-Apim-Subscription-Key': AZURE_KEY
     },
     params: {
-      model: 'body',
-      words: req.params.query
+      model: req.query.model,
+      words: req.query.q
     }
   })
   .then(res => res.data)
@@ -55,8 +73,10 @@ app.get('/api/azure/body/:query', (req, res, next) => {
   .catch(console.error)
 })
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'))
+
+app.use((req, res, next) => {
+  if (path.extname(req.path).length > 0) res.status(404).end()
+  else next(null)
 })
 
 app.use((err, req, res, next) => {
@@ -66,6 +86,12 @@ app.use((err, req, res, next) => {
 })
 
 const PORT = 3332
-app.listen(PORT, () => console.log(`
-Listening on Port ${PORT}...
-`))
+app.listen(PORT, () => {
+  const name = chalk.red.bold('[TypeLess Server]')
+  const url = chalk.cyan.bold(`http://localhost:`)
+  const listen = chalk.yellow.bold('Listening')
+  
+  console.log(`
+  ${name} - ${listen} - ${url}${chalk.yellow(PORT)}
+  `)
+})
