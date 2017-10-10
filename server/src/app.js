@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 // const suggest = promisify(require('suggestion'))
 // const suggest = promisify(require('node-google-suggest'))
 const suggest = require('google-suggestions')
+const axios = require('axios')
+
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -12,7 +14,7 @@ app.use(bodyParser.json())
 app.use(require('volleyball'))
 
 app.get('/bundle.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'bundle.js'))
+  res.sendFile(path.join(__dirname, '..', '..', 'public', 'bundle.js'))
 })
 
 app.use((req, res, next) => {
@@ -20,14 +22,11 @@ app.use((req, res, next) => {
   else next(null)
 })
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
-})
 
-app.post('/suggestions', (req, res, next) => {
+app.post('/api/suggest', (req, res, next) => {
   suggest(req.body.query)
     .then(data => data.map(suggestion =>
-      suggestion.slice(0, -4)
+      suggestion.replace(/<\/b>/, '')
     ))
     .then(suggestions => {
       console.log('\nsuggestion results: ')
@@ -35,6 +34,29 @@ app.post('/suggestions', (req, res, next) => {
       res.json(suggestions)
     })
     .catch(next)
+})
+
+app.get('/api/azure/body/:query', (req, res, next) => {
+  axios({
+    url: '/generateNextWords',
+    method: 'post',
+    baseURL: 'https://westus.api.cognitive.microsoft.com/text/weblm/v1.0/',
+    headers: {
+      'Host': 'westus.api.cognitive.microsoft.com',
+      'Ocp-Apim-Subscription-Key': 'e97abab4ef3f4998b293713e9a5287d6'
+    },
+    params: {
+      model: 'body',
+      words: req.params.query
+    }
+  })
+  .then(res => res.data)
+  .then(suggestions => res.json(suggestions))
+  .catch(console.error)
+})
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', '..', 'public', 'index.html'))
 })
 
 app.use((err, req, res, next) => {

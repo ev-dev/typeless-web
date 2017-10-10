@@ -7,7 +7,7 @@
     "start": "nodemon server/app.js & cross-env NODE_ENV=development webpack -w app",
     "build": "cross-env NODE_ENV=development webpack",
     "build-watch": "cross-env NODE_ENV=development webpack -w",
-    "api-server": "nodemon server/app.js"
+    "server": "npm run server -C server/"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "google-suggestions": "0.0.2",
     "node-google-suggest": "^1.0.1",
     "react": "^16.0.0",
+    "react-autosuggest": "^9.3.2",
     "react-dom": "^16.0.0",
     "react-idle-timer": "^1.5.2",
     "react-router-dom": "^4.2.2"
