@@ -7801,8 +7801,6 @@ module.exports = Cancel;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helpers__ = __webpack_require__(25);
-var _jsxFileName = '/Users/admin/webdev/JS/local-dev-repos/typeless-web/src/Timer.jsx';
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7893,8 +7891,6 @@ var Timer = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
       // if (this.state.secondsRemaining <= 0) {
       //   this.unblock()
       // }
@@ -7902,68 +7898,34 @@ var Timer = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'center', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 77
-          },
-          __self: this
-        },
+        { className: 'center' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h1',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 78
-            },
-            __self: this
-          },
+          null,
           'Seconds Remaining: ',
           this.state.secondsRemaining
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
-          { onClick: this.counter, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 79
-            },
-            __self: this
-          },
+          { onClick: this.counter },
           '+'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h1',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 80
-            },
-            __self: this
-          },
+          null,
           'Count: ',
           this.state.count
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h1',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 81
-            },
-            __self: this
-          },
+          null,
           'Access: ',
           this.state.countBlocked ? 'Blocked' : 'Open'
         ),
         this.state.suggestions.map(function (suggestion) {
           return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h2',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 83
-              },
-              __self: _this2
-            },
+            null,
             suggestion
           );
         })
@@ -7991,9 +7953,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Pad__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PadRAS__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Timer__ = __webpack_require__(49);
-var _jsxFileName = '/Users/admin/webdev/JS/local-dev-repos/typeless-web/src/index.js',
-    _this = this;
-
 
 
 
@@ -8005,41 +7964,17 @@ var _jsxFileName = '/Users/admin/webdev/JS/local-dev-repos/typeless-web/src/inde
 var App = function App() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
-    {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 10
-      },
-      __self: _this
-    },
+    null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'h1',
-      {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        },
-        __self: _this
-      },
+      null,
       'TypeLess Demo'
     ),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Pad__["a" /* default */], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: _this
-    })
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Pad__["a" /* default */], null)
   );
 };
 
-Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(App, {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 20
-  },
-  __self: this
-}), document.getElementById('app'));
+Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(App, null), document.getElementById('app'));
 
 /***/ }),
 /* 51 */
@@ -28743,8 +28678,6 @@ module.exports = function (css) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__SuggestionBar__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Timer__ = __webpack_require__(49);
-var _jsxFileName = '/Users/admin/webdev/JS/local-dev-repos/typeless-web/src/Pad.jsx';
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28934,111 +28867,53 @@ var Pad = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'app-body', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 152
-          },
-          __self: this
-        },
+        { className: 'app-body' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'center', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 153
-            },
-            __self: this
-          },
+          { className: 'center' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h1',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 154
-              },
-              __self: this
-            },
+            null,
             'Request Count:  ',
             requestCount && requestCount
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h1',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 155
-              },
-              __self: this
-            },
+            null,
             'Access:  ',
             requestBlocked ? 'Blocked' : 'Open'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h1',
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 156
-              },
-              __self: this
-            },
+            null,
             'Seconds Until Unblock:  ',
             secondsRemaining
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h3',
-          { className: 'center subtitle output-title', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 159
-            },
-            __self: this
-          },
+          { className: 'center subtitle output-title' },
           'Output'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'columns', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 160
-            },
-            __self: this
-          },
+          { className: 'columns' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'column output-container', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 161
-              },
-              __self: this
-            },
+            { className: 'column output-container' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'h4',
-              { className: 'center output-text', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 162
-                },
-                __self: this
-              },
+              { className: 'center output-text' },
               input.length ? input : 'Your text here...'
             )
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'columns', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 166
-            },
-            __self: this
-          },
+          { className: 'columns' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'column main-pad-container', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 167
-              },
-              __self: this
-            },
+            { className: 'column main-pad-container' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
               id: 'text-area',
               className: 'main-pad box-shadow-class',
@@ -29046,28 +28921,13 @@ var Pad = function (_Component) {
               onChange: this.handleInputChange,
               value: input,
               onKeyPress: this.handleTabAndArrowKeys,
-              autoFocus: true,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 168
-              },
-              __self: this
+              autoFocus: true
             })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'column suggestion-higher-container', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 179
-              },
-              __self: this
-            },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__SuggestionBar__["a" /* default */], { suggestions: suggestions, selected: selected, __source: {
-                fileName: _jsxFileName,
-                lineNumber: 180
-              },
-              __self: this
-            })
+            { className: 'column suggestion-higher-container' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__SuggestionBar__["a" /* default */], { suggestions: suggestions, selected: selected })
           )
         )
       );
@@ -32043,7 +31903,7 @@ module.exports = function (err) {
 /* 108 */
 /***/ (function(module, exports) {
 
-module.exports = {"_args":[["got@6.7.1","/Users/admin/webdev/JS/local-dev-repos/typeless-web"]],"_from":"got@6.7.1","_id":"got@6.7.1","_inBundle":false,"_integrity":"sha1-JAzQV4WpoY5WHcG0S0HHY+8ejbA=","_location":"/got","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"got@6.7.1","name":"got","escapedName":"got","rawSpec":"6.7.1","saveSpec":null,"fetchSpec":"6.7.1"},"_requiredBy":["/google-suggestions"],"_resolved":"https://registry.npmjs.org/got/-/got-6.7.1.tgz","_spec":"6.7.1","_where":"/Users/admin/webdev/JS/local-dev-repos/typeless-web","ava":{"concurrency":4},"browser":{"unzip-response":false},"bugs":{"url":"https://github.com/sindresorhus/got/issues"},"dependencies":{"create-error-class":"^3.0.0","duplexer3":"^0.1.4","get-stream":"^3.0.0","is-redirect":"^1.0.0","is-retry-allowed":"^1.0.0","is-stream":"^1.0.0","lowercase-keys":"^1.0.0","safe-buffer":"^5.0.1","timed-out":"^4.0.0","unzip-response":"^2.0.1","url-parse-lax":"^1.0.0"},"description":"Simplified HTTP requests","devDependencies":{"ava":"^0.17.0","coveralls":"^2.11.4","form-data":"^2.1.1","get-port":"^2.0.0","into-stream":"^3.0.0","nyc":"^10.0.0","pem":"^1.4.4","pify":"^2.3.0","tempfile":"^1.1.1","xo":"*"},"engines":{"node":">=4"},"files":["index.js"],"homepage":"https://github.com/sindresorhus/got#readme","keywords":["http","https","get","got","url","uri","request","util","utility","simple","curl","wget","fetch"],"license":"MIT","maintainers":[{"name":"Sindre Sorhus","email":"sindresorhus@gmail.com","url":"sindresorhus.com"},{"name":"Vsevolod Strukchinsky","email":"floatdrop@gmail.com","url":"github.com/floatdrop"}],"name":"got","repository":{"type":"git","url":"git+https://github.com/sindresorhus/got.git"},"scripts":{"coveralls":"nyc report --reporter=text-lcov | coveralls","test":"xo && nyc ava"},"version":"6.7.1","xo":{"esnext":true}}
+module.exports = {"_args":[["got@6.7.1","/root/production/typeless-web"]],"_from":"got@6.7.1","_id":"got@6.7.1","_inBundle":false,"_integrity":"sha1-JAzQV4WpoY5WHcG0S0HHY+8ejbA=","_location":"/got","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"got@6.7.1","name":"got","escapedName":"got","rawSpec":"6.7.1","saveSpec":null,"fetchSpec":"6.7.1"},"_requiredBy":["/google-suggestions"],"_resolved":"https://registry.npmjs.org/got/-/got-6.7.1.tgz","_spec":"6.7.1","_where":"/root/production/typeless-web","ava":{"concurrency":4},"browser":{"unzip-response":false},"bugs":{"url":"https://github.com/sindresorhus/got/issues"},"dependencies":{"create-error-class":"^3.0.0","duplexer3":"^0.1.4","get-stream":"^3.0.0","is-redirect":"^1.0.0","is-retry-allowed":"^1.0.0","is-stream":"^1.0.0","lowercase-keys":"^1.0.0","safe-buffer":"^5.0.1","timed-out":"^4.0.0","unzip-response":"^2.0.1","url-parse-lax":"^1.0.0"},"description":"Simplified HTTP requests","devDependencies":{"ava":"^0.17.0","coveralls":"^2.11.4","form-data":"^2.1.1","get-port":"^2.0.0","into-stream":"^3.0.0","nyc":"^10.0.0","pem":"^1.4.4","pify":"^2.3.0","tempfile":"^1.1.1","xo":"*"},"engines":{"node":">=4"},"files":["index.js"],"homepage":"https://github.com/sindresorhus/got#readme","keywords":["http","https","get","got","url","uri","request","util","utility","simple","curl","wget","fetch"],"license":"MIT","maintainers":[{"name":"Sindre Sorhus","email":"sindresorhus@gmail.com","url":"sindresorhus.com"},{"name":"Vsevolod Strukchinsky","email":"floatdrop@gmail.com","url":"github.com/floatdrop"}],"name":"got","repository":{"type":"git","url":"git+https://github.com/sindresorhus/got.git"},"scripts":{"coveralls":"nyc report --reporter=text-lcov | coveralls","test":"xo && nyc ava"},"version":"6.7.1","xo":{"esnext":true}}
 
 /***/ }),
 /* 109 */
@@ -32926,8 +32786,6 @@ module.exports = function spread(callback) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/admin/webdev/JS/local-dev-repos/typeless-web/src/SuggestionBar.jsx";
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32960,8 +32818,6 @@ var SuggestionBar = function (_Component) {
   _createClass(SuggestionBar, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       var showLog = this.state.showLog;
       var _props = this.props,
           suggestions = _props.suggestions,
@@ -32970,39 +32826,19 @@ var SuggestionBar = function (_Component) {
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "div",
-        { className: "suggestion-container box-shadow-class", __source: {
-            fileName: _jsxFileName,
-            lineNumber: 21
-          },
-          __self: this
-        },
+        { className: "suggestion-container box-shadow-class" },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "div",
-          { className: "suggestion-list", __source: {
-              fileName: _jsxFileName,
-              lineNumber: 22
-            },
-            __self: this
-          },
+          { className: "suggestion-list" },
           suggestions && suggestions.map(function (suggestion, i) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               "div",
               { key: i,
-                className: "suggestion-item " + (i === selected && 'suggestion-selected'),
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 24
-                },
-                __self: _this2
+                className: "suggestion-item " + (i === selected && 'suggestion-selected')
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 "p",
-                { className: "suggestion-text", __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 27
-                  },
-                  __self: _this2
-                },
+                { className: "suggestion-text" },
                 suggestion
               )
             );
@@ -33010,50 +32846,23 @@ var SuggestionBar = function (_Component) {
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           "div",
-          { className: "instruction-container", __source: {
-              fileName: _jsxFileName,
-              lineNumber: 31
-            },
-            __self: this
-          },
+          { className: "instruction-container" },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "h3",
-            { className: "suggestion-title subtitle", __source: {
-                fileName: _jsxFileName,
-                lineNumber: 32
-              },
-              __self: this
-            },
+            { className: "suggestion-title subtitle" },
             "Suggestions"
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             "ul",
-            { className: "instructions", __source: {
-                fileName: _jsxFileName,
-                lineNumber: 33
-              },
-              __self: this
-            },
+            { className: "instructions" },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               "li",
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 34
-                },
-                __self: this
-              },
+              null,
               "- Hit Tab To Complete"
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               "li",
-              {
-                __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 35
-                },
-                __self: this
-              },
+              null,
               "- Select Options With Arrows"
             )
           )
@@ -33078,9 +32887,6 @@ var SuggestionBar = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_autosuggest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_autosuggest__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__helpers__ = __webpack_require__(25);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _jsxFileName = '/Users/admin/webdev/JS/local-dev-repos/typeless-web/src/PadRAS.jsx',
-    _this = this;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -33115,13 +32921,7 @@ var getSuggestionValue = function getSuggestionValue(suggestion) {
 var renderSuggestion = function renderSuggestion(suggestion) {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
-    {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: _this
-    },
+    null,
     suggestion
   );
 };
@@ -33132,9 +32932,9 @@ var PadRAS = function (_Component) {
   function PadRAS(props) {
     _classCallCheck(this, PadRAS);
 
-    var _this2 = _possibleConstructorReturn(this, (PadRAS.__proto__ || Object.getPrototypeOf(PadRAS)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (PadRAS.__proto__ || Object.getPrototypeOf(PadRAS)).call(this, props));
 
-    _this2.handleTabAndArrowKeys = function (evt) {
+    _this.handleTabAndArrowKeys = function (evt) {
       if (evt.keyCode == 9) {
         // tab key
         evt.preventDefault();
@@ -33147,33 +32947,33 @@ var PadRAS = function (_Component) {
       }
     };
 
-    _this2.onChange = function (evt, _ref) {
+    _this.onChange = function (evt, _ref) {
       var newValue = _ref.newValue;
 
-      _this2.setState(function (state) {
+      _this.setState(function (state) {
         return Object.assign({}, state, {
           value: newValue
         });
       });
     };
 
-    _this2.onBlur = function (evt, _ref2) {
+    _this.onBlur = function (evt, _ref2) {
       var highlightedSuggestion = _ref2.highlightedSuggestion;
 
       evt.preventDefault();
-      _this2.setState(function (state) {
+      _this.setState(function (state) {
         return Object.assign({}, state, {
-          value: _this2.state.value + ' ' + highlightedSuggestion
+          value: _this.state.value + ' ' + highlightedSuggestion
         });
       });
     };
 
-    _this2.onSuggestionsFetchRequested = function (_ref3) {
+    _this.onSuggestionsFetchRequested = function (_ref3) {
       var value = _ref3.value;
 
       Object(__WEBPACK_IMPORTED_MODULE_2__helpers__["b" /* makeSuggestionRequest */])(value).then(function (suggestions) {
         console.log('suggestions: ', suggestions);
-        _this2.setState(function (state) {
+        _this.setState(function (state) {
           return Object.assign({}, state, {
             suggestions: suggestions
           });
@@ -33181,20 +32981,20 @@ var PadRAS = function (_Component) {
       }).catch(console.error);
     };
 
-    _this2.onSuggestionsClearRequested = function () {
-      _this2.setState(function (state) {
+    _this.onSuggestionsClearRequested = function () {
+      _this.setState(function (state) {
         return Object.assign({}, state, {
           suggestions: []
         });
       });
     };
 
-    _this2.state = {
+    _this.state = {
       value: '',
       input: '',
       suggestions: []
     };
-    return _this2;
+    return _this;
   }
 
   _createClass(PadRAS, [{
@@ -33239,12 +33039,7 @@ var PadRAS = function (_Component) {
         highlightFirstSuggestion: false,
         focusInputOnSuggestionClick: true,
         renderSuggestion: renderSuggestion,
-        inputProps: inputProps,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 128
-        },
-        __self: this
+        inputProps: inputProps
       });
     }
   }]);

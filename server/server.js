@@ -84,7 +84,7 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).send(err.message || 'Internal Server Error.')
 })
 
-const PORT = 3332
+const PORT = 8002
 app.listen(PORT, () => {
   const name = chalk.red.bold('[TypeLess Server]')
   const url = chalk.cyan.bold(`http://localhost:`)
